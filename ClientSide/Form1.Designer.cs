@@ -129,6 +129,7 @@ namespace ClientSide
             button3.TabIndex = 10;
             button3.Text = "Convert";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // Form1
             // 

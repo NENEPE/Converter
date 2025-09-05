@@ -75,5 +75,35 @@ namespace ClientSide
                 button3.Enabled = false;
             }, null);
         }
+        private async void button3_Click(object sender, EventArgs e)
+        {
+            await Task.Run(async () =>
+            {
+                try
+                {
+                    using (MemoryStream request = new MemoryStream())
+                    {
+                        cl.user = Environment.UserDomainName + @"\" + Environment.UserName;
+                        cl.c1 = (CurrencyName)comboBox1.SelectedValue;
+                        cl.c2 = (CurrencyName)comboBox2.SelectedValue;
+                        serializerClient.Serialize(request, cl);
+                        byte[] arr = request.ToArray();
+                        await client.SendAsync(arr, arr.Length);
+                    }
+
+                    UdpReceiveResult res = await client.ReceiveAsync();
+
+                    using (MemoryStream result = new MemoryStream(res.Buffer))
+                    {
+                        var serv = serializerServer.Deserialize(result) as CurrencyServer;
+                        ui.Send(u => MessageBox.Show(serv.res, $"Result: {comboBox1.SelectedValue} -> {comboBox2.SelectedValue}"), null);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ui.Send(u => MessageBox.Show("[CLIENT ERROR] " + ex.Message), null);
+                }
+            });
+        }
     }
 }
