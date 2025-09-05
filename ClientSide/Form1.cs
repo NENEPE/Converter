@@ -54,5 +54,26 @@ namespace ClientSide
                 }
             });
         }
+        private async void button2_Click(object sender, EventArgs e)
+        {
+            using (MemoryStream stream = new MemoryStream())
+            {
+                cl.user = Environment.UserDomainName + @"\" + Environment.UserName + " left";
+                serializerClient.Serialize(stream, cl);
+                byte[] arr = stream.ToArray();
+                await client.SendAsync(arr, arr.Length);
+            }
+
+            client?.Close();
+
+            ui.Send(u =>
+            {
+                button2.Enabled = false;
+                button1.Enabled = true;
+                comboBox1.Enabled = false;
+                comboBox2.Enabled = false;
+                button3.Enabled = false;
+            }, null);
+        }
     }
 }
