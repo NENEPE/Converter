@@ -56,6 +56,7 @@ namespace ClientSide
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Agency FB", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Honeydew;
             label2.Location = new Point(36, 111);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
@@ -68,6 +69,7 @@ namespace ClientSide
             label1.AutoSize = true;
             label1.BorderStyle = BorderStyle.Fixed3D;
             label1.Font = new Font("Agency FB", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Honeydew;
             label1.Location = new Point(72, 22);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
@@ -79,6 +81,7 @@ namespace ClientSide
             // 
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Agency FB", 18F);
+            button1.ForeColor = Color.LightCyan;
             button1.Location = new Point(72, 159);
             button1.Name = "button1";
             button1.Size = new Size(192, 42);
@@ -92,6 +95,7 @@ namespace ClientSide
             button2.Enabled = false;
             button2.FlatStyle = FlatStyle.Popup;
             button2.Font = new Font("Agency FB", 18F);
+            button2.ForeColor = Color.LavenderBlush;
             button2.Location = new Point(304, 159);
             button2.Name = "button2";
             button2.Size = new Size(192, 42);
@@ -123,6 +127,7 @@ namespace ClientSide
             button3.Enabled = false;
             button3.FlatStyle = FlatStyle.Popup;
             button3.Font = new Font("Agency FB", 18F);
+            button3.ForeColor = Color.Honeydew;
             button3.Location = new Point(186, 262);
             button3.Name = "button3";
             button3.Size = new Size(192, 42);
@@ -135,6 +140,7 @@ namespace ClientSide
             // 
             AutoScaleDimensions = new SizeF(4F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DarkGreen;
             ClientSize = new Size(587, 331);
             Controls.Add(button3);
             Controls.Add(comboBox2);
@@ -145,6 +151,7 @@ namespace ClientSide
             Controls.Add(label2);
             Controls.Add(label1);
             Font = new Font("Agency FB", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ForeColor = Color.Honeydew;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2, 3, 2, 3);
             MaximizeBox = false;
