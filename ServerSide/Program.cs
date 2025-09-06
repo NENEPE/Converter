@@ -8,11 +8,11 @@ public class Server
     public static async Task Main(string[] args)
     {
         Console.WriteLine("Server started");
-        await WaitClientQuery();
+        await ClientQuery();
         Console.ReadKey();
     }
 
-    public static async Task WaitClientQuery()
+    public static async Task ClientQuery()
     {
         await Task.Run(async () =>
         {
